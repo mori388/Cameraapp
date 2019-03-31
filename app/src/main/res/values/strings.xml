@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Camera app</string>
+    <string name="button">カメラ起動</string>
+    <string name="buttonPanel">写真選択</string>
+    <string name="button2">写真送信</string>
+    <string name="button3">検出画像</string>
+    <string name="button4">結果画像</string>
+    <string name="button5">原画像</string>
+    <string name="button6">ヒートマップ</string>
+    <string name="textview">ここに結果が表示されます。\n歯番　それぞれのポケットの値\n0が健康、1が異常を示しています。\n</string>
+    <string name="description">camera picture</string>
+</resources>
