@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         picture = resize(picture, 1200, 1000, -90);
                         picture = trim(picture, 840, 680);
                         final Handler handler = new Handler();
-                        new PostBmpAsyncHttpRequest(MainActivity.this, handler).execute(new Param("http://35.247.52.9/get_img.php", picture));
+                        new PostBmpAsyncHttpRequest(MainActivity.this, handler).execute(new Param("http://192.168.20.40:8500/get_img.php", picture));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         picture = BitmapFactory.decodeStream(is);
                         picture = resize(picture, 840, 680, 0);
                         final Handler handler = new Handler();
-                        new PostBmpAsyncHttpRequest(MainActivity.this, handler).execute(new Param("http://35.247.52.9/get_img.php", picture));
+                        new PostBmpAsyncHttpRequest(MainActivity.this, handler).execute(new Param("http://192.168.20.40:8500/get_img.php", picture));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 task = new DownloadTask();
                 // Listenerを設定
                 task.setListener(createListener());
-                task.execute("http://35.247.52.9/cal_v3/data.jpg");
+                task.execute("http://192.168.20.40:8500/cal_v3/demo.jpg");
             }
         });
 
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 task = new DownloadTask();
                 // Listenerを設定
                 task.setListener(createListener());
-                task.execute("http://35.247.52.9/cal_v3/result.jpg");
+                task.execute("http://192.168.20.40:8500/cal_v3/result.jpg");
             }
         });
 
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 task = new DownloadTask();
                 // Listenerを設定
                 task.setListener(createListener());
-                task.execute("http://35.247.52.9/cal_v3/grad.jpg");
+                task.execute("http://192.168.20.40:8500/cal_v3/grad.jpg");
             }
         });
 
@@ -172,6 +172,13 @@ public class MainActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                }
+                else{
+                    // ボタンをタップして非同期処理を開始
+                    task = new DownloadTask();
+                    // Listenerを設定
+                    task.setListener(createListener());
+                    task.execute("http://192.168.20.40:8500/cal_v3/ims/data.jpg");
                 }
             }
         });
